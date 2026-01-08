@@ -19,11 +19,13 @@
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 #
 
+import __init__
+
 import sys
 import os
 
-import server, config, config_affairs
-
+# Add lib directory to Python path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'lib'))
 
 #--------------------------------------------------------------
 # config affairs
