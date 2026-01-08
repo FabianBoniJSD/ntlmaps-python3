@@ -60,7 +60,7 @@ create_user() {
     fi
     
     if ! getent passwd "$NTLM_USER" > /dev/null 2>&1; then
-        useradd --system --group "$NTLM_GROUP" --home-dir "$NTLM_HOME" \
+        useradd --system -g "$NTLM_GROUP" --home-dir "$NTLM_HOME" \
                 --shell /bin/false --comment "NTLM Proxy Service" "$NTLM_USER"
         log_success "Created user: ${NTLM_USER}"
     else
